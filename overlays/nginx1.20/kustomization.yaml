@@ -3,9 +3,3 @@ bases:
 images:
   - name: nginx
     newTag: 1.20-alpine
-configMapGenerator:
-  - name: nginx-html
-    files:
-      - index.html
-patchesStrategicMerge:
-  - deployment-patch.yaml
