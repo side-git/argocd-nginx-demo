@@ -3,3 +3,9 @@ bases:
 images:
   - name: nginx
     newTag: 1.10-alpine
+configMapGenerator:
+  - name: nginx-html
+    files:
+      - index.html
+patchesStrategicMerge:
+  - deployment-patch.yaml   # 把 configMap 名打到 deployment 里
